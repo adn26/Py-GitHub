@@ -1,4 +1,4 @@
-#App to show Top Python Repos in Github
+# App to show Top Python Repos in Github
 
 This is an app which shows the top python repos.
 
