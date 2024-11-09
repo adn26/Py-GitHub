@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Python Repositories</title>
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <h1>Top Python Repositories on GitHub</h1>
+
+    <div class="repo-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Repository Name</th>
+            <th>Stars</th>
+            <th>Forks</th>
+            <th>URL</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for repo in repos %}
+          <tr>
+            <td>{{ repo.name }}</td>
+            <td>{{ repo.stargazers_count }}</td>
+            <td>{{ repo.forks_count }}</td>
+            <td><a href="{{ repo.html_url }}" target="_blank">View</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pagination">
+      {% if has_previous_page %}
+      <a href="{{ url_for('home', page=prev_page) }}">Previous</a>
+      {% else %}
+      <span class="disabled">Previous</span> <!-- This hides or disables the button -->
+      
+      {% endif %} {% if has_next_page %}
+      <a href="{{ url_for('home', page=next_page) }}">Next</a>
+      {% else %}
+      <span class="disabled">Next</span>   <!-- This hides or disables the button -->
+      
+      {% endif %}
+    </div>
+  </body>
+</html>
