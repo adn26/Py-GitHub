@@ -1,4 +1,4 @@
-# App to show Top Python Repos in Github
+# RepoRadar (Python)
 
 This is an app which shows the top python repos.
 Here are some [details](https://x.com/iam_adnxn/status/1855270505009594529) on it
